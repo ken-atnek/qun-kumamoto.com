@@ -1,0 +1,66 @@
+@use "variable" as *;
+@use "svg" as *;
+@use "sass:color";
+
+.containerHeader {
+    position: relative;
+    font-size: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.8em 2em;
+    & > article {
+        max-width: $articleMaxWidth;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .boxLogo {
+            max-width: 30rem;
+            transition: 0.3s ease-out;
+            .itemLogo {
+                width: 100%;
+            }
+            @include hover {
+                opacity: 0.4;
+            }
+        }
+        nav {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0 2em;
+            font-size: inherit;
+            .itemLink {
+                font-size: FZ(16);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                transition: 0.3s ease-out;
+                span {
+                    text-transform: capitalize;
+                }
+                @include hover {
+                    color: color.scale($baseBlack, $alpha: -60%);
+                }
+            }
+            .itemLinkForm {
+                background-color: $baseBlack;
+                color: $baseWhite;
+                font-size: FZ(16);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.7em 1em;
+                font-weight: 500;
+                letter-spacing: 0.12em;
+                transition: 0.3s ease-out;
+                @include hover {
+                    background-color: color.scale($baseBlack, $alpha: -60%);
+                    color: $baseBlack;
+                }
+            }
+        }
+    }
+}
