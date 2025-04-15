@@ -3,7 +3,7 @@
 body {
     background-color: $baseWhite;
     color: $baseBlack;
-    font-family: "Noto Sans JP", sans-serif;
+    @include SunSerif;
     font-feature-settings: "palt";
     font-size: clamp(1.2rem, calc($base-vw * 1vw) + calc($slice * 1px), 1.6rem);
     margin: 0;

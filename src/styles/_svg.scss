@@ -14,3 +14,11 @@
     background-size: contain;
     background-position: center center;
 }
+// スライド矢印
+@mixin svg-slide-arrow($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 67" fill="%23#{$color}"><path d="M34.24,67c-.45,0-.9-.17-1.24-.51L0,33.5,33,.51c.69-.69,1.8-.69,2.48,0s.69,1.8,0,2.48L4.97,33.5l30.52,30.5c.69.69.69,1.8,0,2.48-.34.34-.79.51-1.24.51Z"/></svg>');
+    aspect-ratio: 36/67;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}

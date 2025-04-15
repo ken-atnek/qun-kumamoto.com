@@ -1,0 +1,110 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerSlide {
+    position: relative;
+    font-size: inherit;
+    .blockSlide {
+        position: relative;
+        width: 100%;
+        overflow: visible; // ←重要（overflowをhiddenにしない）
+        :global(.swiper-slide) {
+            width: 100%;
+            transition-timing-function: ease-in-out !important;
+        }
+        .boxSlideContents {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .itemSlideImage {
+                width: 100%;
+                aspect-ratio: 1254/523;
+                object-fit: cover;
+            }
+        }
+        :global(.swiper-pagination) {
+            position: absolute;
+            bottom: 5rem !important; // ←マイナスでも表示可能に
+            left: 50% !important;
+            transform: translateX(-50%);
+            justify-content: center;
+            gap: 0 1vw;
+            z-index: 1;
+            display: none;
+            span {
+                width: 4vw;
+                height: 3px;
+            }
+        }
+        .customBullet {
+            background-color: #ccc;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .customBulletActive {
+            background-color: red;
+        }
+    }
+    .buttonPrev,
+    .buttonNext {
+        position: absolute;
+        top: 20vw;
+
+        width: 5rem;
+        aspect-ratio: 1;
+        cursor: pointer;
+        z-index: 10;
+        border: solid 1px #fff;
+        border-radius: 50%;
+        // デフォルトの矢印を非表示
+        &::after {
+            display: none;
+        }
+        @include sp {
+            display: none;
+        }
+        // SVGアイコンを表示する疑似要素を作成
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            @include svg-slide-arrow("ffffff");
+            width: 20%;
+        }
+    }
+
+    // 前のボタンの位置とSVG指定
+    .buttonPrev {
+        left: 1rem;
+    }
+
+    // 次のボタンの位置とSVG指定
+    .buttonNext {
+        right: 1rem;
+        &::before {
+            scale: -1 1;
+        }
+    }
+    article {
+        margin-inline: auto;
+        display: flex;
+        padding: 2em 2em 14em;
+        justify-content: flex-end;
+        p {
+            @include Serif;
+            font-size: FZ(18);
+            text-align: right;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            line-height: 2.4em;
+            i {
+                font-size: 1.3em;
+            }
+            em {
+                font-size: 1.6em;
+            }
+        }
+    }
+}

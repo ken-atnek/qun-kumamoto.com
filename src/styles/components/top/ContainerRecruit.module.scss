@@ -1,0 +1,84 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerRecruit {
+    background-color: $baseBlack;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    article {
+        display: flex;
+        justify-content: flex-end;
+        padding: 2em;
+        max-width: $articleMaxWidth;
+        background: url(../../../assets/images/components/top//containerRecruit/bg.webp)
+            no-repeat center center / cover;
+        .boxContents {
+            background-color: #fff;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            padding: 3em;
+            h2 {
+                font-size: FZ(14);
+                font-weight: 500;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.3em;
+                letter-spacing: 0.08em;
+                span {
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    font-size: 2em;
+                    letter-spacing: 0;
+                    font-style: italic;
+                    display: inline-block;
+                    translate: -0.1em;
+                }
+            }
+            .h2Sidebar {
+                font-size: FZ(18);
+                font-weight: 500;
+                text-align: center;
+                line-height: 2em;
+                margin-top: 2em;
+                margin-bottom: 1em;
+            }
+            span {
+                font-size: FZ(14);
+                font-weight: 500;
+                line-height: 2em;
+            }
+            .itemLink {
+                font-size: FZ(18);
+                position: relative;
+                color: $baseWhite;
+                display: grid;
+                place-content: center;
+                padding-block: 0.8em;
+                margin-top: 3em;
+                z-index: +1;
+                width: 18em;
+                transition: 0.3s ease-out;
+                &::before {
+                    transition: 0.3s ease-out;
+                    border: 2px solid $baseBlack;
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-color: $baseBlack;
+                    z-index: -1;
+                    transform: skewX(-15deg);
+                }
+                @include hover {
+                    color: $baseBlack;
+                    &::before {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

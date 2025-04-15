@@ -1,0 +1,29 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerSdgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 3em 2em 5em;
+    h2 {
+        font-size: FZ(18);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+    }
+    .itemLogo {
+        font-size: inherit;
+        max-width: 49.3rem;
+        margin-top: 1em;
+    }
+    ul {
+        position: relative;
+        max-width: 80rem;
+        padding-inline: 2em;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0 1.6em;
+        margin-top: 1em;
+    }
+}

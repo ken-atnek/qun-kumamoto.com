@@ -1,0 +1,174 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../../../assets/images/components/top/containerIndex/container-bg.webp);
+    background-repeat: repeat;
+    background-size: 50%;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 3em 0;
+        max-width: $articleMaxWidth;
+        h2 {
+            font-size: FZ(14);
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+            letter-spacing: 0.08em;
+            span {
+                text-transform: capitalize;
+                font-weight: 600;
+                font-size: 2em;
+                letter-spacing: 0;
+                font-style: italic;
+                display: inline-block;
+                translate: -0.1em;
+            }
+        }
+        .blockContentsHead {
+            display: flex;
+            position: relative;
+            font-size: inherit;
+            padding-inline: 8rem;
+            justify-content: space-between;
+            gap: 0 2em;
+            .boxText {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                transform: translate(0, -10rem);
+                .wrapText {
+                    position: relative;
+                    width: 26em;
+                    font-size: inherit;
+                    padding: 3em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: calc(100% + 8em);
+                        height: 100%;
+                        background-color: $baseBlack;
+                        z-index: -1;
+                    }
+                    p {
+                        @include Serif;
+                        font-size: FZ(30);
+                        font-weight: 600;
+                        color: $baseWhite;
+                        font-style: italic;
+                        letter-spacing: 0.08em;
+                        line-height: 1.8em;
+                    }
+                }
+                .itemLink {
+                    font-size: FZ(18);
+                    position: relative;
+                    color: $baseWhite;
+                    display: grid;
+                    place-content: center;
+                    padding-block: 0.8em;
+                    margin-top: 3em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background-color: $baseBlack;
+                        z-index: -1;
+                        transform: skewX(-15deg);
+                    }
+                }
+            }
+            .wrapImage {
+                position: relative;
+                width: 60%;
+                max-width: 72rem;
+                .itemImage {
+                    position: relative;
+                    aspect-ratio: 1532/920;
+                    object-fit: cover;
+                }
+            }
+        }
+        .blockContents {
+            display: flex;
+            position: relative;
+            font-size: inherit;
+            justify-content: space-between;
+            .boxText {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                color: $baseWhite;
+                flex: 1;
+                padding: 8em 4em 3em;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100% - 3em);
+                    background-color: $baseBlack;
+                    z-index: -1;
+                }
+                p {
+                    font-size: FZ(14);
+                    margin-top: 3em;
+                    font-weight: 500;
+                    line-height: 1.8em;
+                    letter-spacing: 0.08em;
+                }
+                .itemLink {
+                    font-size: FZ(14);
+                    font-weight: 600;
+                    margin-top: 3em;
+                    letter-spacing: 0.12em;
+                    position: relative;
+                    padding-left: 1.6em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        left: 0;
+                        width: 0.5em;
+                        scale: -1 1;
+                        @include svg-slide-arrow("ffffff");
+                    }
+                }
+            }
+            .wrapImage {
+                position: relative;
+                width: 70%;
+                max-width: 80rem;
+                aspect-ratio: 80/48;
+                .itemImage {
+                    position: relative;
+                    // aspect-ratio: 80/48;
+                    object-fit: cover;
+                }
+            }
+            &.blockVariation {
+                .boxText {
+                    align-items: flex-end;
+                    h2 {
+                        align-items: flex-end;
+                    }
+                    .itemLink {
+                        margin-top: 8em;
+                    }
+                }
+            }
+        }
+    }
+}
