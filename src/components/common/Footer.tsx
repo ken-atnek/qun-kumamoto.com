@@ -2,7 +2,7 @@
  * FOOTER
  * URL: src/components/common/Footer.tsx
  * Created: 2025-04-14
- * Last updated: 2025-04-14
+ * Last updated: 2025-04-16
  * ======================================= */
 
 import Link from 'next/link';
@@ -34,7 +34,7 @@ const Footer = () => {
             </Link>
           </nav>
           <nav className={styles.navBottom}>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/" className={styles.itemLink}>
               トップ
             </Link>
             <Link href="#" className={styles.itemLink}>
@@ -43,7 +43,7 @@ const Footer = () => {
             <Link href="#" className={styles.itemLink}>
               会社概要
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/recruit/" className={styles.itemLink}>
               採用情報
             </Link>
           </nav>
@@ -52,14 +52,17 @@ const Footer = () => {
       <section className={styles.containerFooterFoot}>
         <article>
           <nav>
-            <a href="#">
+            <a href="https://kamenokouonsen-kumamoto.com/" target="_blank">
               <Image
                 src={LinkKamenoko}
                 alt="亀の甲温泉"
                 className={styles.LinkImage}
               />
             </a>
-            <a href="#">
+            <a
+              href="https://kamenokouonsen-kumamoto.com/oka-inari-shrine.html"
+              target="_blank"
+            >
               <Image
                 src={LinkOkaInari}
                 alt="岡稲荷大明神"

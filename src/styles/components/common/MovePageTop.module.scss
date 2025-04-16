@@ -1,0 +1,23 @@
+@use "variable" as *;
+@use "svg" as *;
+@use "sass:color";
+
+.blockPageTop {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.4em;
+    div {
+        width: 100%;
+        max-width: $articleMaxWidth;
+        padding-inline: 2em;
+        font-size: inherit;
+        display: flex;
+        justify-content: flex-end;
+        font-size: inherit;
+        .pageTop {
+            font-size: FZ(14);
+            letter-spacing: 0.12em;
+            font-weight: 500;
+        }
+    }
+}

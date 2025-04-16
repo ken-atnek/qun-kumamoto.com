@@ -11,7 +11,7 @@ import styles from '@/styles/components/common/Header.module.scss';
 import ImageLogo from '@/assets/images/common/kyu-syu-unyu_logo.webp';
 const Header = () => {
   return (
-    <header className={styles.containerHeader}>
+    <header className={styles.containerHeader} id="ContainerHeader">
       <article>
         <Link href="#" className={styles.boxLogo}>
           <Image
@@ -21,7 +21,7 @@ const Header = () => {
           />
         </Link>
         <nav>
-          <Link href="#" className={styles.itemLink}>
+          <Link href="/" className={styles.itemLink}>
             <span>top</span>トップ
           </Link>
           <Link href="#" className={styles.itemLink}>
@@ -30,7 +30,7 @@ const Header = () => {
           <Link href="#" className={styles.itemLink}>
             <span>company</span>会社概要
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link href="/recruit/" className={styles.itemLink}>
             <span>recruit</span>採用情報
           </Link>
           <Link href="#" className={styles.itemLinkForm}>

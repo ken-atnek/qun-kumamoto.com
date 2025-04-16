@@ -1,0 +1,112 @@
+@use "variable" as *;
+@use "svg" as *;
+.contentsDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 0 5em;
+    background-color: #f1f1f2;
+    article {
+        display: flex;
+        flex-direction: column;
+        max-width: $articleMaxWidth;
+        align-items: center;
+        padding-inline: 2em;
+        h3 {
+            font-size: FZ(24);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            position: relative;
+            color: #333;
+            padding-bottom: 0.8em;
+            align-self: flex-start;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 2em;
+                background-color: #333;
+            }
+        }
+        dl {
+            position: relative;
+            background-color: #fff;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            margin-top: 2em;
+            div {
+                position: relative;
+                font-size: inherit;
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                gap: 0 2em;
+                padding-block: 0.8em;
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid #f1f1f2;
+                }
+                &:last-of-type {
+                    border-bottom: 2px solid $baseBlack;
+                }
+                dt {
+                    font-size: FZ(14);
+                    display: grid;
+                    place-content: center;
+                    padding: 0.5em 2em;
+                }
+                dd {
+                    align-self: center;
+                    font-size: FZ(14);
+                    display: flex;
+                    flex-direction: column;
+                    letter-spacing: 0.04em;
+                    span {
+                        line-height: 2em;
+                    }
+                    p {
+                        font-size: 1em;
+                        line-height: 2em;
+                        a {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        .itemLink {
+            font-size: FZ(18);
+            position: relative;
+            color: $baseWhite;
+            font-weight: 500;
+            font-style: italic;
+            display: grid;
+            letter-spacing: 0.08em;
+            place-content: center;
+            padding-block: 0.8em;
+            margin-top: 5em;
+            z-index: +1;
+            width: 22em;
+            transition: 0.3s ease-out;
+            &::before {
+                transition: 0.3s ease-out;
+                border: 2px solid $baseBlack;
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: $baseBlack;
+                z-index: -1;
+                transform: skewX(-15deg);
+            }
+            @include hover {
+                color: $baseBlack;
+                &::before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

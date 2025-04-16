@@ -3,7 +3,7 @@
  * URL: components/top/ContainerRecruit.tsx
  * Referenced in: /app/page.tsx
  * Created: 2025-04-15
- * Last updated: 2025-04-15
+ * Last updated: 2025-04-16
  * ======================================= */
 
 import Link from 'next/link';
@@ -26,7 +26,7 @@ const ContainerRecruit = () => {
           <span>・普通免許の方でもＯＫ！</span>
           <span>・働きながら免許取得可能 ※</span>
           <span>免許取得費用は当社全額負</span>
-          <Link href="#" className={styles.itemLink}>
+          <Link href="/recruit/" className={styles.itemLink}>
             詳しく観る
           </Link>
         </div>
