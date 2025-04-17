@@ -2,7 +2,7 @@
  * FOOTER
  * URL: src/components/common/Footer.tsx
  * Created: 2025-04-14
- * Last updated: 2025-04-16
+ * Last updated: 2025-04-17
  * ======================================= */
 
 import Link from 'next/link';
@@ -29,7 +29,10 @@ const Footer = () => {
             <Link href="#" className={`${styles.itemLink} ${styles.form}`}>
               <span>お問い合せフォームはこちら</span>
             </Link>
-            <Link href="#" className={`${styles.itemLink} ${styles.access}`}>
+            <Link
+              href="/company/#ContainerMap"
+              className={`${styles.itemLink} ${styles.access}`}
+            >
               <span>アクセスはこちら</span>
             </Link>
           </nav>
@@ -40,7 +43,7 @@ const Footer = () => {
             <Link href="#" className={styles.itemLink}>
               事業内容
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/company/" className={styles.itemLink}>
               会社概要
             </Link>
             <Link href="/recruit/" className={styles.itemLink}>

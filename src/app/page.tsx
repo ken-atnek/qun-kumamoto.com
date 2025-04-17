@@ -15,7 +15,7 @@ export default function Home() {
     <main>
       <ContainerSlide />
       <ContainerIndex />
-      <ContainerSdgs />
+      <ContainerSdgs title="九州運輸のSDGs" />
       <ContainerRecruit />
     </main>
   );

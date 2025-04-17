@@ -3,7 +3,7 @@
  * URL: /components/common/ContainerSdgs.tsx
  * Referenced in: /app/page.tsx
  * Created: 2025-04-15
- * Last updated: 2025-04-15
+ * Last updated: 2025-04-17
  * ======================================= */
 
 import styles from '@/styles/components/common/ContainerSdgs.module.scss';
@@ -15,10 +15,14 @@ import Sdgs03 from '@/assets/images/components/sdgs/sdg_icon_03.webp';
 import Sdgs04 from '@/assets/images/components/sdgs/sdg_icon_04.webp';
 import Sdgs05 from '@/assets/images/components/sdgs/sdg_icon_05.webp';
 
-const ContainerSdgs = () => {
+type Props = {
+  title: string;
+};
+
+const ContainerSdgs = ({ title }: Props) => {
   return (
-    <section className={styles.containerSdgs}>
-      <h2>九州運輸のSDGs</h2>
+    <section className={styles.containerSdgs} id="ContainerSdgs">
+      <h2>{title}</h2>
       <div className={styles.itemLogo}>
         <Image src={SdgsLogo} alt="九州運輸のSDGs" />
       </div>

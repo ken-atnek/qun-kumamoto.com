@@ -1,0 +1,86 @@
+@use "../variable" as *;
+@use "../svg" as *;
+@use "../mixin" as *;
+
+.itemH3 {
+    font-size: FZ(25);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: $fontBlack;
+}
+.containerDetails {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 3em;
+    background: url(../../assets/images/company-image.webp) no-repeat center
+        center / cover;
+    dl {
+        max-width: $articleMaxWidth;
+        @include layout-list-details;
+        div {
+            gap: 0 5em;
+            padding-block: 0.5em;
+        }
+        dd {
+            address,
+            a {
+                font-size: 1em;
+            }
+            ul {
+                font-size: inherit;
+                display: grid;
+                grid-template-columns: auto 1fr;
+                li {
+                    font-size: inherit;
+                    display: grid;
+                    grid-column: span 2;
+                    grid-template-columns: subgrid;
+                    align-items: center;
+                    gap: 0 1em;
+                    h4 {
+                        font-size: FZ(14);
+                    }
+                    span {
+                        font-size: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+.containerCreed {
+    background-color: $baseLightGray;
+    padding: 3em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    article {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span {
+            font-size: FZ(18);
+            font-weight: 600;
+            line-height: 1.6em;
+            letter-spacing: 0.08em;
+            color: $fontBlack;
+        }
+    }
+}
+.containerMap {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 2em 5em;
+    align-items: center;
+    .boxMap {
+        width: 100%;
+        position: relative;
+        font-size: inherit;
+        margin-top: 2em;
+        max-width: $articleMaxWidth;
+        aspect-ratio: 2.48;
+    }
+}

@@ -1,0 +1,23 @@
+@use "variable" as *;
+@use "svg" as *;
+@use "mixin" as *;
+
+.navList {
+    position: relative;
+    font-size: inherit;
+    display: flex;
+    justify-content: center;
+    gap: 0 3em;
+    align-items: center;
+    padding: 1.5em 2em 2em;
+    .itemLink {
+        color: #333;
+        font-size: FZ(16);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        transition: 0.3s ease-out;
+        @include hover {
+            opacity: 0.6;
+        }
+    }
+}

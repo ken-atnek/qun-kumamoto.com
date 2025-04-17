@@ -60,7 +60,7 @@ const ContainerIndex = () => {
             <p>
               創業45年の信頼・安心・真心・誠実で新時代の物流業を目指します。
             </p>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/company/" className={styles.itemLink}>
               詳しく観る
             </Link>
           </div>

@@ -2,7 +2,7 @@
  * HEADER
  * URL: src/components/common/Header.tsx
  * Created: 2025-04-14
- * Last updated: 2025-04-14
+ * Last updated: 2025-04-17
  * ======================================= */
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,7 +27,7 @@ const Header = () => {
           <Link href="#" className={styles.itemLink}>
             <span>works</span>事業内容
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link href="/company/" className={styles.itemLink}>
             <span>company</span>会社概要
           </Link>
           <Link href="/recruit/" className={styles.itemLink}>
