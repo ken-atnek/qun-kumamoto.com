@@ -6,6 +6,9 @@
     align-items: center;
     background-color: #ebebeb;
     padding: 3em 2em 5em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     h2 {
         font-size: FZ(18);
         font-weight: 600;
@@ -15,6 +18,10 @@
         font-size: inherit;
         max-width: 49.3rem;
         margin-top: 1em;
+        @include sp {
+            max-width: unset;
+            width: 100%;
+        }
     }
     ul {
         position: relative;
@@ -25,6 +32,12 @@
         grid-template-columns: repeat(5, 1fr);
         gap: 0 1.6em;
         margin-top: 1em;
+        @include sp {
+            grid-template-columns: repeat(3, 1fr);
+            padding-inline: unset;
+            gap: 2vw;
+            margin-top: 8vw;
+        }
     }
     @include pc {
         .itemLogo {

@@ -99,6 +99,9 @@
         display: flex;
         padding: 2em 2em 14em;
         justify-content: flex-end;
+        @include sp {
+            padding: 4vw 4vw 24vw;
+        }
         p {
             @include Serif;
             font-size: FZ(18);

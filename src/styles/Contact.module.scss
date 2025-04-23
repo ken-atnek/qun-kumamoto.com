@@ -8,6 +8,9 @@
     flex-direction: column;
     align-items: center;
     padding: 3em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     .headNotice,
     .bottomNotice {
         font-size: FZ(14);
@@ -29,7 +32,9 @@
     font-size: inherit;
     width: stretch;
     max-width: 80rem;
-
+    @include sp {
+        max-width: unset;
+    }
     // inputタグ初期化
     input {
         margin: 0;
@@ -68,6 +73,11 @@
         grid-template-columns: auto 1fr;
         gap: 1em 0;
         margin-top: 2em;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            gap: 8vw 0;
+        }
         & > p {
             font-size: FZ(14);
             align-self: center;
@@ -80,6 +90,11 @@
             align-items: center;
             white-space: pre-line;
             gap: 0 2em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 2vw 0;
+            }
             input[type="text"],
             input[type="email"] {
                 font-size: FZ(16);

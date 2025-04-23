@@ -8,11 +8,17 @@
     align-items: center;
     padding-inline: 2em;
     padding-top: 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     .wrapH2 {
         width: 100%;
         max-width: $articleMaxWidth;
         font-size: inherit;
         padding-inline: 2em;
+        @include sp {
+            padding-inline: unset;
+        }
         h2 {
             background-color: $baseBlack;
             width: 100%;
@@ -53,6 +59,12 @@
         gap: 2em 0;
         margin-top: 5em;
         margin-bottom: 5em;
+        @include sp {
+            margin-top: 8vw;
+            margin-bottom: 8vw;
+            gap: 16vw 0;
+            padding-inline: unset;
+        }
     }
 }
 .boxVariation {
@@ -61,6 +73,10 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 0 4em;
+    @include sp {
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+    }
     h3 {
         grid-column: span 2;
         color: $fontBlack;
@@ -69,6 +85,9 @@
         letter-spacing: 0.12em;
         border-bottom: 2px solid $fontBlack;
         padding-bottom: 0.5em;
+        @include sp {
+            grid-column: unset;
+        }
     }
     .wrapImage {
         position: relative;
@@ -78,6 +97,11 @@
         align-items: center;
         gap: 0 2em;
         padding-block: 3em;
+        @include sp {
+            grid-auto-flow: row;
+            grid-template-columns: unset;
+            gap: 4vw 0;
+        }
     }
     @include pc {
         transition: 0.5s ease-out;
@@ -117,6 +141,10 @@
     width: fit-content;
     align-self: center;
     color: $fontBlack;
+    @include sp {
+        width: 100%;
+        justify-content: center;
+    }
     & > div {
         grid-column: span 2;
         display: grid;
@@ -125,6 +153,10 @@
         border-top: 1px solid $fontBlack;
         padding: 1em 3em 1em 1em;
         gap: 0 2em;
+        @include sp {
+            padding: 4vw 4vw 4vw 10vw;
+            gap: 0 10vw;
+        }
         &:last-of-type {
             border-bottom: 1px solid $fontBlack;
         }

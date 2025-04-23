@@ -12,6 +12,10 @@
         max-width: $articleMaxWidth;
         background: url(../../../assets/images/components/top//containerRecruit/bg.webp)
             no-repeat center center / cover;
+        @include sp {
+            justify-content: center;
+            padding: 6vw 4vw;
+        }
         .boxContents {
             background-color: #fff;
             font-size: inherit;
@@ -20,6 +24,9 @@
             align-items: center;
             width: 50%;
             padding: 3em;
+            @include sp {
+                width: 100%;
+            }
             @include pc {
                 opacity: 0;
                 transition: 0.8s ease-out;

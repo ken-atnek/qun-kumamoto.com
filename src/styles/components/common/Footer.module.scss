@@ -11,14 +11,24 @@
     & > article {
         max-width: $articleMaxWidth;
         padding-inline: 2em;
+        @include sp {
+            padding-inline: 4vw;
+        }
     }
 }
 .containerFooterHead {
     background-color: #3f8941;
     padding: 4em 2em 3em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     & > article {
         display: grid;
         grid-template-columns: auto 1fr;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+        }
         .boxContents {
             display: flex;
             flex-direction: column;
@@ -61,6 +71,12 @@
             font-size: inherit;
             display: flex;
             gap: 0 1em;
+            @include sp {
+                flex-direction: column;
+                justify-self: stretch;
+                gap: 2vw 0;
+                margin-top: 8vw;
+            }
             .itemLink {
                 border: 1px solid $baseWhite;
                 background-color: $baseBlack;
@@ -68,11 +84,19 @@
                 font-size: FZ(16);
                 padding: 0.5em 1em 0.5em 2.4em;
                 transition: 0.3s ease-out;
+                @include sp {
+                    padding: 2vw 10vw;
+                    font-size: FZ(18);
+                }
                 span {
                     transition: 0.3s ease-out;
                     font-weight: 500;
                     letter-spacing: 0.08em;
                     position: relative;
+                    @include sp {
+                        display: flex;
+                        justify-content: center;
+                    }
                     &::before {
                         transition: 0.3s ease-out;
                         content: "";
@@ -128,6 +152,9 @@
             font-size: inherit;
             display: flex;
             gap: 0 2em;
+            @include sp {
+                display: none;
+            }
             .itemLink {
                 color: $baseWhite;
                 font-size: FZ(16);
@@ -143,6 +170,9 @@
 }
 .containerFooterFoot {
     padding: 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     & > article {
         gap: 3em 0;
         display: flex;
@@ -153,6 +183,11 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0 4em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 4vw 0;
+            }
         }
         .copyright {
             font-size: 1.2rem;

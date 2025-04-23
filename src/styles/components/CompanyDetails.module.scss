@@ -16,6 +16,9 @@
     padding: 2em 3em;
     background: url(../../assets/images/company-image.webp) no-repeat center
         center / cover;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     dl {
         max-width: $articleMaxWidth;
         @include layout-list-details;
@@ -111,6 +114,9 @@
     flex-direction: column;
     padding: 3em 2em 5em;
     align-items: center;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     .boxMap {
         width: 100%;
         position: relative;
@@ -118,6 +124,9 @@
         margin-top: 2em;
         max-width: $articleMaxWidth;
         aspect-ratio: 2.48;
+        @include sp {
+            aspect-ratio: 1/1.5;
+        }
     }
     @include pc {
         h3,

@@ -9,8 +9,15 @@
     max-width: $articleMaxWidth;
     padding-inline: 2em;
     width: 100%;
+    @include sp {
+        padding-inline: 4vw;
+        flex-direction: column;
+    }
     .wrapImage {
         flex: 1;
+        @include sp {
+            flex: unset;
+        }
     }
     .wrapText {
         position: relative;
@@ -20,6 +27,9 @@
         color: #fff;
         padding: 5em 3em;
         max-width: 40rem;
+        @include sp {
+            padding: 6vw 6vw;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -29,6 +39,9 @@
             height: calc(100% - 2em);
             background-color: $baseBlack;
             z-index: -1;
+            @include sp {
+                height: 100%;
+            }
         }
         h3 {
             font-size: FZ(18);
@@ -71,6 +84,7 @@
             }
         }
     }
+
     @include pc {
         .wrapImage {
             transition: 0.5s ease-out;

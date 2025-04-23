@@ -9,6 +9,10 @@
     grid-template-columns: auto 1fr;
     font-size: inherit;
     margin-top: 2em;
+    @include sp {
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+    }
     div {
         position: relative;
         font-size: inherit;
@@ -17,6 +21,12 @@
         grid-template-columns: subgrid;
         gap: 0 2em;
         padding-block: 0.8em;
+        @include sp {
+            grid-column: unset;
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            padding-block: 4vw;
+        }
         &:not(:last-of-type) {
             border-bottom: 1px solid #f1f1f2;
         }
@@ -28,6 +38,11 @@
             display: grid;
             place-content: center;
             padding: 0.5em 2em;
+            @include sp {
+                font-size: FZ(16);
+                place-content: center left;
+                padding: 0 4vw;
+            }
         }
         dd {
             align-self: center;
@@ -35,12 +50,22 @@
             display: flex;
             flex-direction: column;
             letter-spacing: 0.04em;
+            @include sp {
+                padding: 2vw 4vw;
+                font-size: FZ(16);
+            }
             span {
                 line-height: 2em;
+                @include sp {
+                    padding: 0;
+                }
             }
             p {
                 font-size: 1em;
                 line-height: 2em;
+                @include sp {
+                    padding: 0;
+                }
                 a {
                     font-size: 1em;
                 }
