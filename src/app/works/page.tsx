@@ -15,8 +15,9 @@ import ContentsImage03 from '@/assets/images/components/works/contents03.webp';
 import ContentsImage04 from '@/assets/images/components/works/contents04.webp';
 import ContentsImage05 from '@/assets/images/components/works/contents05.webp';
 import CarVariation from '@/components/works/CarVariation';
-
+import boxStyles from '@/styles/components/works/BoxContents.module.scss';
 export default function Works() {
+  console.log('styles.moveLeft:', styles.moveLeft);
   return (
     <main>
       <PageTitle breadcrumb="works" titleEn="works" titleJp="事業内容" />
@@ -59,6 +60,7 @@ export default function Works() {
           description="一時的にお客様の大事な荷物をお預かり致します。 入出庫・在庫管理・簡易品質確認も請け負います。"
           linkText="ご依頼はこちら"
           linkHref="/contact/"
+          className={boxStyles.moveLeft}
         />
         <BoxContents
           image={ContentsImage04}
@@ -81,6 +83,7 @@ export default function Works() {
           description="熊本各地域、並びに九州各県より東北、関東、関西、中京、中国、四国方面に輸送致します。主に青果物、一般荷物、プラスチック製品の原料、家畜の飼料、農作物の肥料、自動販売機、家畜(牛)その他各種貨物。"
           linkText="ご依頼はこちら"
           linkHref="/contact/"
+          className={boxStyles.moveLeft}
         />
       </section>
       <CarVariation />

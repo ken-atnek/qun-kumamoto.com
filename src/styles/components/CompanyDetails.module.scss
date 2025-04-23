@@ -49,6 +49,25 @@
             }
         }
     }
+    @include pc {
+        h3 {
+            opacity: 0;
+            transition: 0.5s ease-out;
+            translate: 0 10rem;
+        }
+        dl {
+            opacity: 0;
+            transition: 0.5s ease-out;
+            translate: 0 30rem;
+        }
+        &.is-active {
+            h3,
+            dl {
+                opacity: 1;
+                translate: 0;
+            }
+        }
+    }
 }
 .containerCreed {
     background-color: $baseLightGray;
@@ -56,6 +75,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     article {
         margin-top: 1em;
         display: flex;
@@ -67,6 +87,22 @@
             line-height: 1.6em;
             letter-spacing: 0.08em;
             color: $fontBlack;
+        }
+    }
+    @include pc {
+        h3,
+        article {
+            opacity: 0;
+            translate: 0 20rem;
+            transition: 0.8s ease-out;
+            z-index: 1;
+        }
+        &.is-active {
+            h3,
+            article {
+                opacity: 1;
+                translate: 0;
+            }
         }
     }
 }
@@ -82,5 +118,20 @@
         margin-top: 2em;
         max-width: $articleMaxWidth;
         aspect-ratio: 2.48;
+    }
+    @include pc {
+        h3,
+        .boxMap {
+            transition: 0.8s ease-out;
+            opacity: 0;
+            translate: 0 20rem;
+        }
+        &.is-active {
+            h3,
+            .boxMap {
+                opacity: 1;
+                translate: 0;
+            }
+        }
     }
 }

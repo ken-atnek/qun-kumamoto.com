@@ -63,6 +63,37 @@
             letter-spacing: 0.08em;
             margin-top: 1em;
         }
+        @include pc {
+            h3 {
+                opacity: 0;
+                translate: 0 5rem;
+                transition: 0.5s ease-out;
+            }
+            ul {
+                li {
+                    opacity: 0;
+                    translate: 0 30rem;
+                    transition: 0.8s ease-out;
+                }
+            }
+            &.is-active {
+                h3 {
+                    opacity: 1;
+                    translate: 0;
+                }
+                ul {
+                    li {
+                        opacity: 1;
+                        translate: 0;
+                        @for $i from 1 through 3 {
+                            &:nth-of-type(#{$i}) {
+                                transition-delay: calc(#{$i} * 0.15s);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .blockPoint {
         display: flex;
@@ -121,6 +152,28 @@
                         line-height: 2em;
                         em {
                             font-size: 1.3em;
+                        }
+                    }
+                }
+            }
+        }
+        @include pc {
+            ul {
+                li {
+                    opacity: 0;
+                    translate: 0 30rem;
+                    transition: 0.8s ease-out;
+                }
+            }
+            &.is-active {
+                ul {
+                    li {
+                        opacity: 1;
+                        translate: 0;
+                        @for $i from 1 through 2 {
+                            &:nth-of-type(#{$i}) {
+                                transition-delay: calc(#{$i} * 0.15s);
+                            }
                         }
                     }
                 }
@@ -191,6 +244,37 @@
                         line-height: 2em;
                         em {
                             font-size: 1.3em;
+                        }
+                    }
+                }
+            }
+        }
+        @include pc {
+            h3 {
+                opacity: 0;
+                translate: 0 5rem;
+                transition: 0.5s ease-out;
+            }
+            ul {
+                li {
+                    opacity: 0;
+                    translate: 0 30rem;
+                    transition: 0.8s ease-out;
+                }
+            }
+            &.is-active {
+                h3 {
+                    opacity: 1;
+                    translate: 0;
+                }
+                ul {
+                    li {
+                        opacity: 1;
+                        translate: 0;
+                        @for $i from 1 through 9 {
+                            &:nth-of-type(#{$i}) {
+                                transition-delay: calc(#{$i} * 0.15s);
+                            }
                         }
                     }
                 }

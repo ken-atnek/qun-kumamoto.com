@@ -4,7 +4,8 @@
  * Created: 2025-04-16
  * Last updated: 2025-04-16
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/components/recruit/RecruitContentsHead.module.scss';
 import Image from 'next/image';
 import HeadImage from '@/assets/images/components/recruit/2700872_m.webp';
@@ -24,6 +25,9 @@ import WelfareImage08 from '@/assets/images/components/recruit/welfare08.webp';
 import WelfareImage09 from '@/assets/images/components/recruit/welfare09.webp';
 
 const RecruitContentsHead = () => {
+  const triggerA = useScrollTrigger<HTMLDivElement>();
+  const triggerB = useScrollTrigger<HTMLDivElement>();
+  const triggerC = useScrollTrigger<HTMLDivElement>();
   return (
     <section className={styles.contentsHead}>
       <p className={styles.catchCopy}>
@@ -36,7 +40,12 @@ const RecruitContentsHead = () => {
       <div className={styles.boxImage}>
         <Image src={HeadImage} alt="九州運輸の車両" />
       </div>
-      <article className={styles.blockSchedule}>
+      <article
+        className={`${styles.blockSchedule} ${styles.slideIn} ${
+          triggerA.isVisible ? styles['is-active'] : ''
+        }`}
+        ref={triggerA.ref}
+      >
         <h3>1日の業務の流れ</h3>
         <ul>
           <li>
@@ -65,7 +74,12 @@ const RecruitContentsHead = () => {
           ※あくまで参考例です。熊本県内、佐賀・長崎・宮崎・鹿児島など各方面でタイムスケジュールは異なります。​
         </p>
       </article>
-      <article className={styles.blockPoint}>
+      <article
+        className={`${styles.blockPoint} ${styles.slideIn} ${
+          triggerB.isVisible ? styles['is-active'] : ''
+        }`}
+        ref={triggerB.ref}
+      >
         <ul>
           <li>
             <h3>九州運輸で働く魅力</h3>
@@ -92,7 +106,12 @@ const RecruitContentsHead = () => {
           </li>
         </ul>
       </article>
-      <article className={styles.blockWelfare}>
+      <article
+        className={`${styles.blockWelfare} ${styles.slideIn} ${
+          triggerC.isVisible ? styles['is-active'] : ''
+        }`}
+        ref={triggerC.ref}
+      >
         <h3>福利厚生</h3>
         <ul>
           <li>

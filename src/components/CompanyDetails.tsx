@@ -2,15 +2,26 @@
  * 会社概要 コンポーネント
  * URL: /components/CompanyDetails.tsx
  * Created: 2025-04-17
- * Last updated: 2025-04-17
+ * Last updated: 2025-04-23
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/components/CompanyDetails.module.scss';
 
 const CompanyDetails = () => {
+  const triggerA = useScrollTrigger<HTMLDivElement>();
+  const triggerB = useScrollTrigger<HTMLDivElement>();
+  const triggerC = useScrollTrigger<HTMLDivElement>();
+
   return (
     <>
-      <section className={styles.containerDetails} id="ContainerDetails">
+      <section
+        className={`${styles.containerDetails} ${styles.slideIn} ${
+          triggerA.isVisible ? styles['is-active'] : ''
+        }`}
+        id="ContainerDetails"
+        ref={triggerA.ref}
+      >
         <h3 className={styles.itemH3}>会社概要</h3>
         <dl>
           <div>
@@ -102,7 +113,12 @@ const CompanyDetails = () => {
           </div>
         </dl>
       </section>
-      <section className={styles.containerCreed}>
+      <section
+        className={`${styles.containerCreed} ${styles.slideIn} ${
+          triggerB.isVisible ? styles['is-active'] : ''
+        }`}
+        ref={triggerB.ref}
+      >
         <h3 className={styles.itemH3}>経営の信条</h3>
         <article>
           <span>一、事業を通じて社会に奉仕する</span>
@@ -113,7 +129,13 @@ const CompanyDetails = () => {
           <span>一、安全輸送、無事故、無違反の確立</span>
         </article>
       </section>
-      <section className={styles.containerMap} id="ContainerMap">
+      <section
+        className={`${styles.containerMap} ${styles.slideIn} ${
+          triggerC.isVisible ? styles['is-active'] : ''
+        }`}
+        id="ContainerMap"
+        ref={triggerC.ref}
+      >
         <h3 className={styles.itemH3}>事務所マップ</h3>
         <div className={styles.boxMap}>
           <iframe

@@ -5,7 +5,8 @@
  * Created: 2025-04-22
  * Last updated: 2025-04-22
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import VariationContents from '@/components/works/VariationContents';
 import styles from '@/styles/components/works/CarVariation.module.scss';
 import ImageVariation01a from '@/assets/images/components/works/Variation01a.webp';
@@ -17,9 +18,15 @@ import ImageVariation03b from '@/assets/images/components/works/Variation03b.web
 import ImageVariation04a from '@/assets/images/components/works/Variation04a.webp';
 import ImageVariation04b from '@/assets/images/components/works/Variation04b.webp';
 const CarVariation = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
     <section className={styles.carVariation} id="CarVariation">
-      <div className={styles.wrapH2}>
+      <div
+        className={`${styles.wrapH2} ${styles.slideIn} ${
+          isVisible ? styles['is-active'] : ''
+        }`}
+        ref={ref}
+      >
         <h2>
           <span>Variation</span>保有車両
         </h2>

@@ -3,9 +3,10 @@
  * URL: /components/top/ContainerIndex.tsx
  * Referenced in: /app/page.tsx
  * Created: 2025-04-15
- * Last updated: 2025-04-15
+ * Last updated: 2025-04-23
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/components/top/ContainerIndex.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,10 +15,16 @@ import imageCompany from '@/assets/images/components/top/containerIndex/item-com
 import imageVariation from '@/assets/images/components/top/containerIndex/item-variation.webp';
 
 const ContainerIndex = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
     <section className={styles.containerIndex}>
       <article>
-        <div className={styles.blockContentsHead}>
+        <div
+          className={`${styles.blockContentsHead} ${styles.slideIn} ${
+            isVisible ? styles['is-active'] : ''
+          }`}
+          ref={ref}
+        >
           <div className={styles.boxText}>
             <div className={styles.wrapText}>
               <p>
@@ -44,7 +51,12 @@ const ContainerIndex = () => {
             />
           </div>
         </div>
-        <div className={`${styles.blockContents} ${styles.blockCompany} `}>
+        <div
+          className={`${styles.blockContents} ${styles.blockCompany} ${
+            styles.slideIn
+          } ${isVisible ? styles['is-active'] : ''}`}
+          ref={ref}
+        >
           <div className={styles.wrapImage}>
             <Image
               src={imageCompany}
@@ -65,7 +77,11 @@ const ContainerIndex = () => {
             </Link>
           </div>
         </div>
-        <div className={`${styles.blockContents} ${styles.blockVariation} `}>
+        <div
+          className={`${styles.blockContents} ${styles.blockVariation} ${
+            styles.slideIn
+          } ${isVisible ? styles['is-active'] : ''}`}
+        >
           <div className={styles.boxText}>
             <h2>
               <span>variation</span>保有車両

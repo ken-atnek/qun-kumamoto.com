@@ -3,17 +3,24 @@
  * URL: components/top/ContainerRecruit.tsx
  * Referenced in: /app/page.tsx
  * Created: 2025-04-15
- * Last updated: 2025-04-16
+ * Last updated: 2025-04-23
  * ======================================= */
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 
 import Link from 'next/link';
 import styles from '@/styles/components/top/ContainerRecruit.module.scss';
 
 const ContainerRecruit = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
-    <section className={styles.containerRecruit}>
+    <section className={styles.containerRecruit} ref={ref}>
       <article>
-        <div className={styles.boxContents}>
+        <div
+          className={`${styles.boxContents} ${styles.slideIn} ${
+            isVisible ? styles['is-active'] : ''
+          }`}
+        >
           <h2>
             <span>recruit</span>採用情報
           </h2>

@@ -48,6 +48,13 @@
             align-items: center;
             padding: 3em 0;
             gap: 0.5em 0;
+            translate: -45rem 0;
+            transition: 0.5s ease-out;
+            opacity: 0;
+            &.is-active {
+                translate: 0;
+                opacity: 1;
+            }
             h2 {
                 font-size: FZ(30);
                 font-weight: 700;

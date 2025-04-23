@@ -29,6 +29,19 @@
                 font-size: 1.2em;
             }
         }
+        @include pc {
+            h2 {
+                opacity: 0;
+                translate: 0 10rem;
+                transition: 0.5s ease-out;
+            }
+            &.is-active {
+                h2 {
+                    opacity: 1;
+                    translate: 0;
+                }
+            }
+        }
     }
     & > ul {
         width: 100%;
@@ -65,6 +78,35 @@
         align-items: center;
         gap: 0 2em;
         padding-block: 3em;
+    }
+    @include pc {
+        transition: 0.5s ease-out;
+        translate: 0 5rem;
+        .itemImage {
+            opacity: 0;
+            translate: 0 20rem;
+            transition: 0.8s ease-out;
+        }
+        .sizeDetails {
+            opacity: 0;
+            translate: 0 20rem;
+            transition: 0.8s ease-out;
+        }
+        &.is-active {
+            translate: 0;
+            .itemImage {
+                opacity: 1;
+                translate: 0;
+                &:last-of-type {
+                    transition-delay: 0.2s;
+                }
+            }
+            .sizeDetails {
+                opacity: 1;
+                translate: 0;
+                transition-delay: 0.5s;
+            }
+        }
     }
 }
 .sizeDetails {

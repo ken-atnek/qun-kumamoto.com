@@ -20,6 +20,13 @@
             align-items: center;
             width: 50%;
             padding: 3em;
+            @include pc {
+                opacity: 0;
+                transition: 0.8s ease-out;
+                &.is-active {
+                    opacity: 1;
+                }
+            }
             h2 {
                 font-size: FZ(14);
                 font-weight: 500;

@@ -5,7 +5,8 @@
  * Created: 2025-04-22
  * Last updated: 2025-04-22
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/components/works/ServiceMenu.module.scss';
 import Image from 'next/image';
 import ServiceMenuImage01 from '@/assets/images/components/works/ServiceMenu01.webp';
@@ -16,8 +17,14 @@ import ServiceMenuImage05 from '@/assets/images/components/works/ServiceMenu05.w
 import ServiceMenuImage06 from '@/assets/images/components/works/ServiceMenu06.webp';
 
 const ServiceMenu = () => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
-    <section className={styles.ServiceMenu}>
+    <section
+      className={`${styles.ServiceMenu} ${styles.slideIn} ${
+        isVisible ? styles['is-active'] : ''
+      }`}
+      ref={ref}
+    >
       <h2>サービスメニュー</h2>
       <span className={styles.h2Sidebar}>service menu</span>
       <ul>

@@ -14,6 +14,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include pc {
+            opacity: 0;
+            transition: 0.5s ease-out;
+            translate: 0 -5rem;
+            &.is-active {
+                opacity: 1;
+                translate: 0;
+            }
+        }
         .boxLogo {
             max-width: 30rem;
             transition: 0.3s ease-out;

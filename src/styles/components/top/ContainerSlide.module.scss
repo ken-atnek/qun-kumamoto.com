@@ -3,6 +3,13 @@
 .containerSlide {
     position: relative;
     font-size: inherit;
+    @include pc {
+        clip-path: inset(0 0 0 100%);
+        transition: 0.8s ease-out;
+        &.is-active {
+            clip-path: inset(0);
+        }
+    }
     .blockSlide {
         position: relative;
         width: 100%;
@@ -99,6 +106,15 @@
             font-weight: 600;
             letter-spacing: 0.12em;
             line-height: 2.4em;
+            @include pc {
+                transition: 0.5s ease-out;
+                translate: 100%;
+                opacity: 0;
+                &.is-active {
+                    translate: 0;
+                    opacity: 1;
+                }
+            }
             i {
                 font-size: 1.3em;
             }

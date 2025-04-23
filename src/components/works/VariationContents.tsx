@@ -5,7 +5,10 @@
  * Created: 2025-04-22
  * Last updated: 2025-04-22
  * ======================================= */
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import React from 'react';
+
 import type { StaticImageData } from 'next/image';
 import styles from '@/styles/components/works/CarVariation.module.scss';
 
@@ -30,12 +33,24 @@ const VariationContents = ({
   images,
   specs,
 }: VariationContentsProps) => {
+  const { ref, isVisible } = useScrollTrigger<HTMLLIElement>();
+
   return (
-    <li className={styles.boxVariation}>
+    <li
+      className={`${styles.boxVariation} ${styles.slideIn} ${
+        isVisible ? styles['is-active'] : ''
+      }`}
+      ref={ref}
+    >
       <h3>{heading}</h3>
       <div className={styles.wrapImage}>
         {images.map((img, index) => (
-          <Image key={index} src={img.src} alt={img.alt} />
+          <Image
+            key={index}
+            src={img.src}
+            alt={img.alt}
+            className={styles.itemImage}
+          />
         ))}
       </div>
       <dl className={styles.sizeDetails}>

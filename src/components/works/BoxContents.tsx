@@ -3,8 +3,10 @@
  * URL: src/components/works/BoxContents.tsx
  * Referenced in: /works/page.tsx
  * Created: 2025-04-22
- * Last updated: 2025-04-22
+ * Last updated: 2025-04-23
  * ======================================= */
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import Image, { StaticImageData } from 'next/image';
 import styles from '@/styles/components/works/BoxContents.module.scss';
 import Link from 'next/link';
@@ -17,6 +19,7 @@ type Props = {
   description: ReactNode;
   linkText: string;
   linkHref: string;
+  className?: string;
 };
 
 const BoxContents = ({
@@ -26,9 +29,21 @@ const BoxContents = ({
   description,
   linkText,
   linkHref,
+  className,
 }: Props) => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
-    <div className={styles.boxContents}>
+    <div
+      className={[
+        styles.boxContents,
+        styles.slideIn,
+        isVisible ? styles['is-active'] : '',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      ref={ref}
+    >
       <div className={styles.wrapImage}>
         <Image src={image} alt={alt} className={styles.itemImage} />
       </div>

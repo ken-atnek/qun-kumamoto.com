@@ -17,5 +17,14 @@
         &:nth-of-type(2n-1) {
             flex-direction: row-reverse;
         }
+        &:nth-of-type(2n) {
+            .wrapImage {
+                border: solid 1px #0000ff;
+                translate: -50rem !important;
+            }
+            .wrapText {
+                translate: -30rem;
+            }
+        }
     }
 }

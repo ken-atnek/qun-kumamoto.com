@@ -13,6 +13,8 @@ import { Swiper, SwiperSlide, type SwiperRef } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import styles from '@/styles/components/top/ContainerSlide.module.scss';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
+
 // Swiper用CSS
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -23,7 +25,7 @@ import slide02 from '@/assets/images/components/top/containerSlide/slide02.webp'
 
 const ContainerSlide = () => {
   const swiperRef = useRef<SwiperRef>(null);
-
+  const { ref, isVisible } = useScrollTrigger();
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
       const swiperInstance = swiperRef.current.swiper;
@@ -58,7 +60,12 @@ const ContainerSlide = () => {
     };
   }, []);
   return (
-    <section className={styles.containerSlide}>
+    <section
+      className={`${styles.containerSlide} ${styles.slideIn} ${
+        isVisible ? styles['is-active'] : ''
+      }`}
+      ref={ref}
+    >
       <Swiper
         ref={swiperRef}
         className={styles.blockSlide}
@@ -118,7 +125,11 @@ const ContainerSlide = () => {
       <div className={styles.buttonPrev}></div>
       <div className={styles.buttonNext}></div>
       <article>
-        <p>
+        <p
+          className={`${styles.slideIn} ${
+            isVisible ? styles['is-active'] : ''
+          }`}
+        >
           物流を通し<i>人</i>と<i>人</i>との懸け橋に。熊本と全国を<i>結ぶ</i>。
           <br />
           それが私たち <em>九州運輸</em>。

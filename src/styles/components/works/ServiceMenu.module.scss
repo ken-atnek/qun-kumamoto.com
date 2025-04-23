@@ -93,4 +93,53 @@
             }
         }
     }
+    @include pc {
+        h2,
+        .h2Sidebar {
+            transition: 0.5s ease-out;
+            opacity: 0;
+            translate: 0 15rem;
+        }
+        ul {
+            li {
+                opacity: 0;
+                translate: 0 20rem;
+                transition: 0.8s ease-out;
+            }
+        }
+        article {
+            & > div {
+                opacity: 0;
+                transition: 0.8s ease-out;
+                translate: -40rem;
+                &:last-of-type {
+                    translate: -60rem;
+                }
+            }
+        }
+        &.is-active {
+            h2,
+            .h2Sidebar {
+                opacity: 1;
+                translate: 0;
+            }
+            ul {
+                li {
+                    opacity: 1;
+                    translate: 0;
+                    @for $i from 1 through 4 {
+                        &:nth-of-type(#{$i}) {
+                            transition-delay: #{($i * 0.15)}s;
+                        }
+                    }
+                }
+            }
+            article {
+                & > div {
+                    opacity: 1;
+                    translate: 0;
+                }
+            }
+        }
+    }
 }

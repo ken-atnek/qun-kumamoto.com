@@ -2,7 +2,7 @@
  * 問合せページ
  * URL: src/app/contact/page.tsx
  * Created: 2025-04-22
- * Last updated: 2025-04-22
+ * Last updated: 2025-04-23
  * ======================================= */
 
 'use client';

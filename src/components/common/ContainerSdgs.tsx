@@ -5,7 +5,8 @@
  * Created: 2025-04-15
  * Last updated: 2025-04-17
  * ======================================= */
-
+'use client';
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import styles from '@/styles/components/common/ContainerSdgs.module.scss';
 import Image from 'next/image';
 import SdgsLogo from '@/assets/images/components/sdgs/sdgs_logo.webp';
@@ -20,8 +21,16 @@ type Props = {
 };
 
 const ContainerSdgs = ({ title }: Props) => {
+  const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
+
   return (
-    <section className={styles.containerSdgs} id="ContainerSdgs">
+    <section
+      className={`${styles.containerSdgs} ${styles.slideIn} ${
+        isVisible ? styles['is-active'] : ''
+      }`}
+      id="ContainerSdgs"
+      ref={ref}
+    >
       <h2>{title}</h2>
       <div className={styles.itemLogo}>
         <Image src={SdgsLogo} alt="九州運輸のSDGs" />

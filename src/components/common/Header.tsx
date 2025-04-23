@@ -2,17 +2,19 @@
  * HEADER
  * URL: src/components/common/Header.tsx
  * Created: 2025-04-14
- * Last updated: 2025-04-17
+ * Last updated: 2025-04-23
  * ======================================= */
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/components/common/Header.module.scss';
-
+import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import ImageLogo from '@/assets/images/common/kyu-syu-unyu_logo.webp';
 const Header = () => {
+  const { ref, isVisible } = useScrollTrigger();
   return (
-    <header className={styles.containerHeader} id="ContainerHeader">
-      <article>
+    <header className={styles.containerHeader} id="ContainerHeader" ref={ref}>
+      <article className={`${isVisible ? styles['is-active'] : ''}`}>
         <Link href="#" className={styles.boxLogo}>
           <Image
             src={ImageLogo}
