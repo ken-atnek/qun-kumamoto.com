@@ -71,7 +71,7 @@ const RecruitContentsDetails = () => {
             <dd>一般貨物運送業</dd>
           </div>
         </dl>
-        <Link href="#" className={styles.itemLink}>
+        <Link href="/contact/" className={styles.itemLink}>
           求人応募はこちら
         </Link>
       </article>

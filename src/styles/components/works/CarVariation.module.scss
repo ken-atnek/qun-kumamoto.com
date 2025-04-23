@@ -1,0 +1,115 @@
+@use "variable" as *;
+@use "svg" as *;
+@use "mixin" as *;
+
+.carVariation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2em;
+    padding-top: 2em;
+    .wrapH2 {
+        width: 100%;
+        max-width: $articleMaxWidth;
+        font-size: inherit;
+        padding-inline: 2em;
+        h2 {
+            background-color: $baseBlack;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            padding-block: 1.4em;
+            gap: 0.3em 0;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            font-size: FZ(18);
+            span {
+                font-size: 1.2em;
+            }
+        }
+    }
+    & > ul {
+        width: 100%;
+        max-width: $articleMaxWidth;
+        font-size: inherit;
+        padding-inline: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em 0;
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+}
+.boxVariation {
+    position: relative;
+    font-size: inherit;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 4em;
+    h3 {
+        grid-column: span 2;
+        color: $fontBlack;
+        font-size: FZ(18);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        border-bottom: 2px solid $fontBlack;
+        padding-bottom: 0.5em;
+    }
+    .wrapImage {
+        position: relative;
+        font-size: inherit;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 0 2em;
+        padding-block: 3em;
+    }
+}
+.sizeDetails {
+    display: grid;
+    position: relative;
+    font-size: inherit;
+    grid-template-columns: auto 1fr;
+    width: fit-content;
+    align-self: center;
+    color: $fontBlack;
+    & > div {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: subgrid;
+        font-size: inherit;
+        border-top: 1px solid $fontBlack;
+        padding: 1em 3em 1em 1em;
+        gap: 0 2em;
+        &:last-of-type {
+            border-bottom: 1px solid $fontBlack;
+        }
+        dt {
+            font-size: FZ(24);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+        dd {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            padding-top: 0.3em;
+            gap: 0.3em 0;
+            h4 {
+                font-size: FZ(19);
+                font-weight: 600;
+                text-align: right;
+            }
+            span {
+                font-size: FZ(19);
+                font-weight: 600;
+                &::before {
+                    content: "：";
+                    margin-inline: 0.3em;
+                }
+            }
+        }
+    }
+}

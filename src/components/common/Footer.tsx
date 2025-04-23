@@ -26,7 +26,10 @@ const Footer = () => {
             </address>
           </div>
           <nav className={styles.navTop}>
-            <Link href="#" className={`${styles.itemLink} ${styles.form}`}>
+            <Link
+              href="/contact/"
+              className={`${styles.itemLink} ${styles.form}`}
+            >
               <span>お問い合せフォームはこちら</span>
             </Link>
             <Link
@@ -40,7 +43,7 @@ const Footer = () => {
             <Link href="/" className={styles.itemLink}>
               トップ
             </Link>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/works/" className={styles.itemLink}>
               事業内容
             </Link>
             <Link href="/company/" className={styles.itemLink}>

@@ -70,7 +70,7 @@ const ContainerIndex = () => {
             <h2>
               <span>variation</span>保有車両
             </h2>
-            <Link href="#" className={styles.itemLink}>
+            <Link href="/works/#CarVariation" className={styles.itemLink}>
               詳しく観る
             </Link>
           </div>

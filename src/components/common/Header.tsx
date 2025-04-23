@@ -24,7 +24,7 @@ const Header = () => {
           <Link href="/" className={styles.itemLink}>
             <span>top</span>トップ
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link href="/works/" className={styles.itemLink}>
             <span>works</span>事業内容
           </Link>
           <Link href="/company/" className={styles.itemLink}>
@@ -33,7 +33,7 @@ const Header = () => {
           <Link href="/recruit/" className={styles.itemLink}>
             <span>recruit</span>採用情報
           </Link>
-          <Link href="#" className={styles.itemLinkForm}>
+          <Link href="/contact/" className={styles.itemLinkForm}>
             <span>Contact us</span>ご依頼・お問い合せ
           </Link>
         </nav>

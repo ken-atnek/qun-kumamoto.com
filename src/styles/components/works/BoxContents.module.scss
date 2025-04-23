@@ -1,0 +1,74 @@
+@use "variable" as *;
+@use "svg" as *;
+@use "mixin" as *;
+
+.boxContents {
+    position: relative;
+    display: flex;
+    font-size: inherit;
+    max-width: $articleMaxWidth;
+    padding-inline: 2em;
+    width: 100%;
+    .wrapImage {
+        flex: 1;
+    }
+    .wrapText {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        color: #fff;
+        padding: 5em 3em;
+        max-width: 40rem;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 2em);
+            background-color: $baseBlack;
+            z-index: -1;
+        }
+        h3 {
+            font-size: FZ(18);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            line-height: 1.7em;
+        }
+        p {
+            font-size: FZ(14);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            line-height: 1.7em;
+            margin-top: 0.5em;
+        }
+        .itemLink {
+            font-size: FZ(18);
+            position: relative;
+            color: $baseWhite;
+            display: grid;
+            place-content: center;
+            padding-block: 0.8em;
+            margin-top: 2em;
+            z-index: +1;
+            width: 100%;
+            transition: 0.3s ease-out;
+            &::before {
+                transition: 0.3s ease-out;
+                border: 2px solid #fff;
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                transform: skewX(-15deg);
+            }
+            @include hover {
+                color: $baseBlack;
+                &::before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
