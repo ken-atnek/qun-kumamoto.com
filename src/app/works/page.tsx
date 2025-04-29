@@ -80,7 +80,7 @@ export default function Works() {
           image={ContentsImage05}
           alt="一般貨物自動車運送事業"
           h3Title="一般貨物自動車運送事業"
-          description="熊本各地域、並びに九州各県より東北、関東、関西、中京、中国、四国方面に輸送致します。主に青果物、一般荷物、プラスチック製品の原料、家畜の飼料、農作物の肥料、自動販売機、家畜(牛)その他各種貨物。"
+          description="熊本各地域、並びに九州各県より東北、関東、関西、中京、中国、四国方面に輸送致します。主に青果物、一般荷物、プラスチック製品の原料、家畜の飼料、農作物の肥料、自動販売機、その他各種貨物。"
           linkText="ご依頼はこちら"
           linkHref="/contact/"
           className={boxStyles.moveLeft}

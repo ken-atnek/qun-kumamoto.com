@@ -15,8 +15,8 @@ import ImageVariation02a from '@/assets/images/components/works/Variation02a.web
 import ImageVariation02b from '@/assets/images/components/works/Variation02b.webp';
 import ImageVariation03a from '@/assets/images/components/works/Variation03a.webp';
 import ImageVariation03b from '@/assets/images/components/works/Variation03b.webp';
-import ImageVariation04a from '@/assets/images/components/works/Variation04a.webp';
-import ImageVariation04b from '@/assets/images/components/works/Variation04b.webp';
+// import ImageVariation04a from '@/assets/images/components/works/Variation04a.webp';
+// import ImageVariation04b from '@/assets/images/components/works/Variation04b.webp';
 const CarVariation = () => {
   const { ref, isVisible } = useScrollTrigger<HTMLDivElement>();
   return (
@@ -58,10 +58,10 @@ const CarVariation = () => {
           ]}
         />
         <VariationContents
-          heading="冷凍車"
+          heading="冷蔵車"
           images={[
-            { src: ImageVariation02a, alt: '冷凍車1' },
-            { src: ImageVariation02b, alt: '冷凍車2' },
+            { src: ImageVariation02a, alt: '冷蔵車1' },
+            { src: ImageVariation02b, alt: '冷蔵車2' },
           ]}
           specs={[
             {
@@ -120,7 +120,7 @@ const CarVariation = () => {
             },
           ]}
         />
-        <VariationContents
+        {/* <VariationContents
           heading="家畜車"
           images={[
             { src: ImageVariation04a, alt: '家畜車1' },
@@ -152,7 +152,7 @@ const CarVariation = () => {
               ],
             },
           ]}
-        />
+        /> */}
       </ul>
     </section>
   );

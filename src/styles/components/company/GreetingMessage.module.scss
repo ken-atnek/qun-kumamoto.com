@@ -1,0 +1,50 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerGreetingMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 3em 3em;
+    background-color: #ebebeb;
+    @include sp {
+        padding: 10vw 4vw;
+    }
+    article {
+        max-width: $articleMaxWidth;
+        display: flex;
+        flex-direction: column;
+        h3 {
+            align-self: center;
+            font-size: FZ(25);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: $fontBlack;
+        }
+        p {
+            font-size: FZ(16);
+            @include Serif;
+            letter-spacing: 0.08em;
+            line-height: 1.8em;
+            max-width: 70rem;
+            align-self: center;
+            margin-top: 2em;
+            @include sp {
+                font-size: FZ(14);
+            }
+            span {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                text-align: right;
+                margin-top: 1.4em;
+                font-size: 0.9em;
+                em {
+                    margin-left: 0.5em;
+                    font-size: 1.8em;
+                    @include Serif;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.containerHead {
+    font-size: inherit;
+    @include pc {
+        clip-path: inset(0 0 0 100%);
+        transition: 0.8s ease-out;
+        &.is-active {
+            clip-path: inset(0);
+        }
+    }
+    article {
+        margin-inline: auto;
+        display: flex;
+        padding: 2em 2em 14em;
+        justify-content: flex-end;
+        @include sp {
+            padding: 4vw 4vw 24vw;
+        }
+        p {
+            @include Serif;
+            font-size: FZ(18);
+            text-align: right;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            line-height: 2.4em;
+            @include pc {
+                transition: 0.5s ease-out;
+                translate: 100%;
+                opacity: 0;
+                &.is-active {
+                    translate: 0;
+                    opacity: 1;
+                }
+            }
+            i {
+                font-size: 1.3em;
+            }
+            em {
+                font-size: 1.6em;
+            }
+        }
+    }
+}

@@ -9,12 +9,14 @@ import MovePageTop from '@/components/common/MovePageTop';
 import PageTitle from '@/components/common/PageTitle';
 import Link from 'next/link';
 import styles from '@/styles/Company.module.scss';
-import CompanyDetails from '@/components/CompanyDetails';
+import CompanyDetails from '@/components/company/CompanyDetails';
+import GreetingMessage from '@/components/company/GreetingMessage';
 
 export default function Recruit() {
   return (
     <main>
       <PageTitle breadcrumb="company" titleEn="Company" titleJp="会社概要" />
+      <GreetingMessage />
       <nav className={styles.navList}>
         <Link href="#ContainerSdgs" className={styles.itemLink}>
           我が社とSDGs

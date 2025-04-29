@@ -6,7 +6,7 @@
  * ======================================= */
 'use client';
 import { useScrollTrigger } from '@/hooks/useScrollTrigger';
-import styles from '@/styles/components/CompanyDetails.module.scss';
+import styles from '@/styles/components/company/CompanyDetails.module.scss';
 
 const CompanyDetails = () => {
   const triggerA = useScrollTrigger<HTMLDivElement>();
@@ -99,7 +99,7 @@ const CompanyDetails = () => {
           <div>
             <dt>車両台数総数</dt>
             <dd>
-              <span>45台 トレーラー2台</span>
+              <span>45台</span>
               <span>10t車25台・4t車13台・2t車5台</span>
             </dd>
           </div>
