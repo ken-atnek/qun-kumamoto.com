@@ -56,13 +56,10 @@ export default function Contact() {
     formData.append('message', message);
 
     try {
-      const response = await fetch(
-        'https://demo-qun-kumamoto.tuna-pic.co.jp/backend/contact.php',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      );
+      const response = await fetch('/backend/contact.php', {
+        method: 'POST',
+        body: formData,
+      });
 
       const result = await response.json();
       // console.log('サーバーレスポンス:', result);

@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       type: 'website',
       images: [
         {
-          url: './images/ogp.jpg',
+          url: '/images/ogp.jpg',
           width: 1200,
           height: 630,
           alt: '九州運輸のOGP画像',
