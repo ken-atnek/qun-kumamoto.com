@@ -66,7 +66,7 @@ const Footer = () => {
               />
             </a>
             <a
-              href="https://kamenokouonsen-kumamoto.com/oka-inari-shrine.html"
+              href="https://kamenokouonsen-kumamoto.com/oka-inari-shrine/"
               target="_blank"
             >
               <Image
