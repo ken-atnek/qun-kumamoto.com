@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       type: 'website',
       images: [
         {
-          url: '/images/ogp.jpg',
+          url: `${metadataBase?.toString()}images/ogp.jpg`,
           width: 1200,
           height: 630,
           alt: '九州運輸のOGP画像',
@@ -53,9 +53,8 @@ export const metadata: Metadata = {
   }),
   title: '九州運輸',
   description: isRealProduction
-    ? '九州と全国の都市を物流で結ぶ。株式会社九州運輸は昭和51年の創業以来、地域密着と地域貢献をコンセプトに高品質輸送を展開しています。。'
+    ? '九州と全国の都市を物流で結ぶ。株式会社九州運輸は昭和51年の創業以来、地域密着と地域貢献をコンセプトに高品質輸送を展開しています。'
     : undefined,
-  robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
   icons: [
     {
       url: '/favicon.ico',
@@ -74,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="jp" className={`${notoSans.className} ${roboto.className}`}>
+    <html lang="ja" className={`${notoSans.className} ${roboto.className}`}>
       <head>
         <meta
           name="robots"
