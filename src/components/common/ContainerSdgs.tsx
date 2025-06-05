@@ -37,19 +37,19 @@ const ContainerSdgs = ({ title }: Props) => {
       </div>
       <ul>
         <li>
-          <Image src={Sdgs01} alt="九州運輸のSDGs01" />
+          <Image src={Sdgs01} alt="すべての人に健康と福祉を" />
         </li>
         <li>
-          <Image src={Sdgs02} alt="九州運輸のSDGs01" />
+          <Image src={Sdgs02} alt="エネルギーをみんなにそしてクリーンに" />
         </li>
         <li>
-          <Image src={Sdgs03} alt="九州運輸のSDGs01" />
+          <Image src={Sdgs03} alt="住み続けられるまちづくりを" />
         </li>
         <li>
-          <Image src={Sdgs04} alt="九州運輸のSDGs01" />
+          <Image src={Sdgs04} alt="海の豊かさを守ろう" />
         </li>
         <li>
-          <Image src={Sdgs05} alt="九州運輸のSDGs01" />
+          <Image src={Sdgs05} alt="陸の豊かさを守ろう" />
         </li>
       </ul>
     </section>

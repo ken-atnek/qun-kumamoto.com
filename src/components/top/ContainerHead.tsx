@@ -23,7 +23,7 @@ const ContainerHead = () => {
     >
       <Image
         src={slide01}
-        alt="熊本の心と旬を運ぶ"
+        alt="九州運輸は熊本の心と旬を運ぶ会社です"
         className={styles.itemSlideImage}
       />
       <article>
